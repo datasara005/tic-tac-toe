@@ -57,99 +57,54 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.saxeli)
+        saxeli1=findViewById(R.id.name1)
+        saxeli2=findViewById(R.id.name2)
+        dadastureba=findViewById(R.id.dadastureba)
+        dadastureba.setOnClickListener {
+            if(saxeli1.length()>0 && saxeli2.length()>0 ){
+                setContentView(R.layout.activity_main)
+                archeuli = intArrayOf(-1, -1, -1, -1, -1, -1, -1, -1, -1)
+                x0 = findViewById(R.id.x0)
+                x1 = findViewById(R.id.x1)
+                x2 = findViewById(R.id.x2)
+                x3 = findViewById(R.id.x3)
+                x4 = findViewById(R.id.x4)
+                x5 = findViewById(R.id.x5)
+                x6 = findViewById(R.id.x6)
+                x7 = findViewById(R.id.x7)
+                x8 = findViewById(R.id.x8)
+
+                erti = findViewById(R.id.erti)
+                ori = findViewById(R.id.ori)
+
+                reset = findViewById(R.id.reset)
 
 
-        archeuli = intArrayOf(-1, -1, -1, -1, -1, -1, -1, -1, -1)
-        change=findViewById(R.id.change)
-        change.setOnClickListener {
-            setContentView(R.layout.saxeli)
-            saxeli1=findViewById(R.id.name1)
-            saxeli2=findViewById(R.id.name2)
-            dadastureba=findViewById(R.id.dadastureba)
-            dadastureba.setOnClickListener {
-                if(saxeli1.length()>0 && saxeli2.length()>0 ){
-                    setContentView(R.layout.activity_main)
-                    x0 = findViewById(R.id.x0)
-                    x1 = findViewById(R.id.x1)
-                    x2 = findViewById(R.id.x2)
-                    x3 = findViewById(R.id.x3)
-                    x4 = findViewById(R.id.x4)
-                    x5 = findViewById(R.id.x5)
-                    x6 = findViewById(R.id.x6)
-                    x7 = findViewById(R.id.x7)
-                    x8 = findViewById(R.id.x8)
-
-                    erti = findViewById(R.id.erti)
-                    ori = findViewById(R.id.ori)
-
-                    reset = findViewById(R.id.reset)
-
-
-                    player = findViewById(R.id.player)
+                player = findViewById(R.id.player)
 
 
 
 
 
 
-                    x0.setOnClickListener(this)
-                    x1.setOnClickListener(this)
-                    x2.setOnClickListener(this)
-                    x3.setOnClickListener(this)
-                    x4.setOnClickListener(this)
-                    x5.setOnClickListener(this)
-                    x6.setOnClickListener(this)
-                    x7.setOnClickListener(this)
-                    x8.setOnClickListener(this)
+                x0.setOnClickListener(this)
+                x1.setOnClickListener(this)
+                x2.setOnClickListener(this)
+                x3.setOnClickListener(this)
+                x4.setOnClickListener(this)
+                x5.setOnClickListener(this)
+                x6.setOnClickListener(this)
+                x7.setOnClickListener(this)
+                x8.setOnClickListener(this)
 
 
 
 
 
 
-                }
             }
         }
-
-
-
-
-        x0 = findViewById(R.id.x0)
-        x1 = findViewById(R.id.x1)
-        x2 = findViewById(R.id.x2)
-        x3 = findViewById(R.id.x3)
-        x4 = findViewById(R.id.x4)
-        x5 = findViewById(R.id.x5)
-        x6 = findViewById(R.id.x6)
-        x7 = findViewById(R.id.x7)
-        x8 = findViewById(R.id.x8)
-
-        erti = findViewById(R.id.erti)
-        ori = findViewById(R.id.ori)
-
-        reset = findViewById(R.id.reset)
-
-
-        player = findViewById(R.id.player)
-
-
-
-
-
-
-        x0.setOnClickListener(this)
-        x1.setOnClickListener(this)
-        x2.setOnClickListener(this)
-        x3.setOnClickListener(this)
-        x4.setOnClickListener(this)
-        x5.setOnClickListener(this)
-        x6.setOnClickListener(this)
-        x7.setOnClickListener(this)
-        x8.setOnClickListener(this)
-
-
-
 
     }
 
@@ -173,11 +128,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (activeplayer == player1) {
             dawerili.setText("O")
             activeplayer = player2
-            if(saxeli1.length()>0 && saxeli2.length()>0 ){
+            if(saxeli2.length()>0 ){
                 player.setText(saxeli2.text.toString())
 
             }
-            else{
+            else if (saxeli2.length()==0){
                 player.setText("მოთამაშე 2")
             }
 
@@ -187,11 +142,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else if (activeplayer == player2) {
             dawerili.setText("X")
             activeplayer = player1
-            if(saxeli1.length()>0 && saxeli2.length()>0 ){
+            if(saxeli1.length()>0){
                 player.setText(saxeli1.text.toString())
 
             }
-            else{
+            else if (saxeli1.length()==0){
                 player.setText("მოთამაშე 1")
             }
             dawerili.setTextColor(Color.BLACK)
@@ -209,7 +164,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ) {
             activoba = false
             mogebuli = 1
-            Toast.makeText(this, "მოიგო პირველმა", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "მოგებულია"+" "+saxeli1.text, Toast.LENGTH_SHORT).show()
 
         } else if ((x0.text == x1.text && x1.text == x2.text && x0.text == "X") || (x0.text == x4.text && x4.text == x8.text && x0.text == "X") || (x0.text == x3.text && x3.text == x6.text && x0.text == "X")
             || (x4.text == x1.text && x1.text == x7.text && x4.text == "X") || (x2.text == x5.text && x8.text == x2.text && x2.text == "X") || (x2.text == x4.text && x6.text == x2.text && x2.text == "X")
@@ -217,7 +172,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ) {
             activoba = false
             mogebuli = 2
-            Toast.makeText(this, "მოიგო მეორემ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "მოგებულია"+" "+saxeli2.text, Toast.LENGTH_SHORT).show()
         }
         var count = 0
         for (i in 0 until archeuli.size) {
