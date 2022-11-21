@@ -75,6 +75,23 @@
             tools:ignore="MissngConstraints"
             tools:layout_editor_absoluteX="98dp" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ganlageba2"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" სახელების შეცვლა "
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            >
+
+        </TextView>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
