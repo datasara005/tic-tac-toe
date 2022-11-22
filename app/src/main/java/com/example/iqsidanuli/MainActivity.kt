@@ -98,6 +98,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 x7.setOnClickListener(this)
                 x8.setOnClickListener(this)
 
+                player.setText(saxeli1.text)
+
 
 
 
@@ -192,7 +194,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         archeuli = intArrayOf(-1, -1, -1, -1, -1, -1, -1, -1, -1)
         activeplayer = player1
         activoba = true
-        player.setText("მოთამაშე 1")
+        player.setText(saxeli1.text)
         x0.setText("")
         x1.setText("")
         x2.setText("")
